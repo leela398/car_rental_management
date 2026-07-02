@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: apex-drive-car-rental
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: MONGODB_URI
+        sync: false # Render will prompt you to enter your MongoDB Atlas URI during setup
+      - key: SESSION_SECRET
+        generateValue: true # Render will automatically generate a secure secret key for sessions
