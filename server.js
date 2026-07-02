@@ -54,7 +54,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
-  secret: 'carrental-secret-key-12345',
+  secret: process.env.SESSION_SECRET || 'carrental-default-secret-key-9999',
   resave: false,
   saveUninitialized: true
 }));

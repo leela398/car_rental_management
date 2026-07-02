@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap');
 
 :root {
-  --bg-primary: #0b0f19;
-  --bg-surface: rgba(17, 24, 39, 0.75);
-  --accent-gold: #ffb703;
-  --accent-amber: #fb8500;
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --border-color: rgba(255, 183, 3, 0.15);
+  --bg-primary: #f8fafc;
+  --bg-surface: #ffffff;
+  --accent-gold: #0f172a;
+  --accent-amber: #334155;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --border-color: #e2e8f0;
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
+  --text-muted: #94a3b8;
 }
 
 * {
@@ -23,18 +24,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, rgba(11, 15, 25, 0.95) 0%, rgba(11, 15, 25, 0.85) 100%);
+  background: #f8fafc;
   font-family: var(--font-body);
   color: var(--text-primary);
   overflow: hidden;
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.03);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(1.5rem);
-  -webkit-backdrop-filter: blur(1.5rem);
+  background: var(--bg-surface);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  border: 1px solid var(--border-color);
   padding: 2.5rem;
   border-radius: 1.5rem;
   width: 100%;
@@ -55,7 +54,6 @@ body {
   font-size: 2rem;
   color: var(--accent-gold);
   margin: 0 0 1.5rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .card__col {
@@ -66,10 +64,9 @@ body {
 .card__input {
   background: none;
   border: none;
-  border-bottom: dashed 0.15rem rgba(255, 183, 3, 0.4);
+  border-bottom: dashed 0.15rem #cbd5e1;
   font-size: 1.2rem;
-  color: #fff;
-  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  color: var(--text-primary);
   width: 100%;
   padding-bottom: 0.3rem;
   transition: 0.3s ease;
@@ -81,7 +78,7 @@ body {
 }
 
 .card__input::placeholder {
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--text-muted);
 }
 
 .card__input:focus {
@@ -112,10 +109,9 @@ body {
   font-family: var(--font-heading);
   font-weight: 800;
   font-size: 2.2rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-secondary);
   min-width: 100px;
   text-align: right;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 @keyframes cardEnter {
@@ -131,7 +127,7 @@ body {
 
 .pay, .btn {
   width: 100%;
-  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-amber) 100%);
+  background: var(--accent-gold);
   border: none;
   height: 48px;
   font-size: 15px;
@@ -139,7 +135,7 @@ body {
   font-weight: 700;
   border-radius: 8px;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(255, 183, 3, 0.25);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
   transition: 0.3s ease;
   margin-top: 15px;
   display: flex;
@@ -149,7 +145,7 @@ body {
 
 .pay a, .btn a {
   text-decoration: none;
-  color: #000;
+  color: #ffffff;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -160,12 +156,12 @@ body {
 
 .pay:hover, .btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(255, 183, 3, 0.4);
-  background: #fff;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  background: #1e293b;
 }
 
 .pay:hover a, .btn:hover a {
-  color: #000;
+  color: #ffffff;
 }
 
 .payment-amount {

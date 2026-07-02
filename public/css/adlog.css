@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap');
 
 :root {
-    --bg-primary: #0b0f19;
-    --bg-surface: rgba(17, 24, 39, 0.75);
-    --accent-gold: #ffb703;
-    --accent-amber: #fb8500;
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --border-color: rgba(255, 183, 3, 0.15);
+    --bg-primary: #f8fafc;
+    --bg-surface: #ffffff;
+    --accent-gold: #0f172a;
+    --accent-amber: #334155;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --border-color: #e2e8f0;
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
 }
@@ -19,11 +19,7 @@
 }
 
 body{
-    background: linear-gradient(135deg, rgba(11, 15, 25, 0.95) 0%, rgba(11, 15, 25, 0.8) 100%), url("../images/adminbg2.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
+    background: #f8fafc;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -36,12 +32,10 @@ body{
 .form{
     width: 360px;
     background: var(--bg-surface);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
     border: 1px solid var(--border-color);
     border-radius: 16px;
     padding: 40px 30px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     display: flex;
     flex-direction: column;
 }
@@ -60,8 +54,8 @@ body{
 .form input{
     width: 100%;
     height: 48px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
     border-radius: 8px;
     color: var(--text-primary);
     font-size: 14px;
@@ -73,8 +67,8 @@ body{
 .form input:focus {
     outline: none;
     border-color: var(--accent-gold);
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 0 10px rgba(255, 183, 3, 0.15);
+    background: #ffffff;
+    box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.15);
 }
 
 ::placeholder{
@@ -84,25 +78,25 @@ body{
 .btnn{
     width: 100%;
     height: 48px;
-    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-amber) 100%);
+    background: var(--accent-gold);
     border: none;
-    color: #000;
+    color: #ffffff;
     font-size: 15px;
     font-family: var(--font-heading);
     font-weight: 700;
     letter-spacing: 0.5px;
     border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(255, 183, 3, 0.25);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     transition: 0.3s ease;
     margin-top: 10px;
 }
 
 .btnn:hover{
     transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(255, 183, 3, 0.4);
-    background: #fff;
-    color: #000;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    background: #1e293b;
+    color: #ffffff;
 }
 
 .btnn a{
@@ -143,7 +137,7 @@ body{
     font-size: 42px;
     font-weight: 800;
     color: var(--text-primary);
-    background: linear-gradient(135deg, #fff 30%, var(--accent-gold) 100%);
+    background: linear-gradient(135deg, #0f172a 30%, #334155 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 30px;
@@ -179,5 +173,5 @@ body{
 }
 
 .back:hover a {
-    color: #000;
+    color: #fff;
 }
