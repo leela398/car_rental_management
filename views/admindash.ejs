@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMINISTRATOR - APEX DRIVE</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="admin-page">
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">APEX</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="/adminvehicle">VEHICLE MANAGEMENT</a></li>
+                    <li><a href="/adminusers">USERS</a></li>
+                    <li><a href="/admindash">FEEDBACKS</a></li>
+                    <li><a href="/adminbook">BOOKING REQUEST</a></li>
+                    <li><button class="nn"><a href="/logout">LOGOUT</a></button></li>
+                </ul>
+            </div> 
+        </div>
+        <div>
+            <h1 class="header">FEEDBACKS</h1>
+            <div>
+                <div>
+                    <table class="content-table">
+                <thead>
+                    <tr>
+                        <th>FEEDBACK_ID</th> 
+                        <th>EMAIL</th>
+                        <th>COMMENT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <% if (feedbacks && feedbacks.length > 0) { %>
+                    <% feedbacks.forEach(function(fed, index) { %>
+                        <tr class="active-row">
+                            <td><%= fed._id %></td>
+                            <td><%= fed.email %></td>
+                            <td><%= fed.comment %></td>
+                        </tr>
+                    <% }); %>
+                <% } else { %>
+                    <tr>
+                        <td colspan="3" style="text-align: center;">No feedbacks found.</td>
+                    </tr>
+                <% } %>
+                </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

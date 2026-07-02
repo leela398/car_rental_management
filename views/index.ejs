@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CAR RENTAL</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript">
+        window.history.forward();
+        function noBack() {
+            window.history.forward();
+        }
+        function preventBack() {
+            window.history.forward(); 
+        }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
+</head>
+<body>
+
+<% if (error) { %>
+    <script>alert("<%= error %>")</script>
+<% } %>
+
+    <div class="hai">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">APEX</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="/about">ABOUT</a></li>
+                    <li><a href="#">SERVICES</a></li>
+                    <li><a href="/contact">CONTACT</a></li>
+                    <li><button class="adminbtn"><a href="/adminlogin">ADMIN LOGIN</a></button></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div class="content-left">
+                <h1>Rent Your <br><span>Dream Car</span></h1>
+                <p class="par">Live the life of Luxury.<br>
+                    Just rent a car of your wish from our vast collection.<br>Enjoy every moment with your family<br>
+                    Join us to make this family vast.  </p>
+                <button class="cn"><a href="/register">JOIN US</a></button>
+            </div>
+            <div class="form">
+                <h2>Login Here</h2>
+                <form action="/login" method="POST"> 
+                    <input type="email" name="email" placeholder="Enter Email Here" required>
+                    <input type="password" name="pass" placeholder="Enter Password Here" required>
+                    <input class="btnn" type="submit" value="Login" name="login"></input>
+                </form>
+                <p class="link">Don't have an account?<br>
+                <a href="/register">Sign up</a> here</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</body>
+</html>

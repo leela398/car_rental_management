@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMINISTRATOR - APEX DRIVE</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="admin-page">
+<div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">APEX</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="/adminvehicle">VEHICLE MANAGEMENT</a></li>
+                    <li><a href="/adminusers">USERS</a></li>
+                    <li><a href="/admindash">FEEDBACKS</a></li>
+                    <li><a href="/adminbook">BOOKING REQUEST</a></li>
+                    <li><button class="nn"><a href="/logout">LOGOUT</a></button></li>
+                </ul>
+            </div>
+         </div>
+
+        <div>
+            <h1 class="header">BOOKINGS</h1>
+            <div>
+                <div>
+                    <table class="content-table">
+                <thead>
+                    <tr>
+                        <th>CAR ID</th>
+                        <th>EMAIL</th>
+                        <th>BOOK PLACE</th>
+                        <th>BOOK DATE</th>
+                        <th>DURATION</th>
+                        <th>PHONE NUMBER</th>
+                        <th>DESTINATION</th>
+                        <th>RETURN DATE</th>
+                        <th>BOOKING STATUS</th>
+                        <th>APPROVE</th>
+                        <th>CAR RETURNED</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <% if (bookings && bookings.length > 0) { %>
+                    <% bookings.forEach(function(book) { %>
+                        <tr class="active-row">
+                            <td><%= book.car_id %></td>
+                            <td><%= book.email %></td>
+                            <td><%= book.book_place %></td>
+                            <td><%= new Date(book.book_date).toLocaleDateString() %></td>
+                            <td><%= book.duration %></td>
+                            <td><%= book.phone_number %></td>
+                            <td><%= book.destination %></td>
+                            <td><%= new Date(book.return_date).toLocaleDateString() %></td>
+                            <td><%= book.book_status %></td>
+                            <td>
+                                <button type="button" class="but-approve">
+                                    <a href="/approvebooking/<%= book._id %>">APPROVE</a>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="but-returned">
+                                    <a href="/returncar/<%= book.car_id %>/<%= book._id %>">RETURNED</a>
+                                </button>
+                            </td>
+                        </tr>
+                    <% }); %>
+                <% } else { %>
+                    <tr>
+                        <td colspan="11" style="text-align: center;">No bookings found.</td>
+                    </tr>
+                <% } %>
+                </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Details - APEX DRIVE</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="body">
+  <div class="cd">
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">APEX</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="/about">ABOUT</a></li>
+                    <li><a href="/contact">CONTACT</a></li>
+                    <li><a href="/feedback">FEEDBACK</a></li>
+                    <li><button class="nn"><a href="/logout">LOGOUT</a></button></li>
+                    <li><img src="/images/profile.png" class="circle" alt="Alps"></li>
+                    <li><p class="phello">HELLO! &nbsp;<a id="pname"><%= user.fname %> <%= user.lname %></a></p></li>
+                    <li><a id="stat" href="/bookinstatus">BOOKING STATUS</a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <h1 class="overview">OUR CARS OVERVIEW</h1>
+            <ul class="de">
+            <% if (cars && cars.length > 0) { %>
+                <% cars.forEach(function(car) { %>
+                    <li>
+                        <form method="POST">
+                            <div class="box">
+                                <div class="imgBx">
+                                    <img src="/images/<%= car.car_img %>">
+                                </div>
+                                <div class="content">
+                                    <h1><%= car.car_name %></h1>
+                                    <h2>Fuel Type : <a><%= car.fuel_type %></a> </h2>
+                                    <h2>CAPACITY : <a><%= car.capacity %></a> </h2>
+                                    <h2>Rent Per Day : <a>₹<%= car.price %>/-</a></h2>
+                                    <button type="button" class="utton" style="margin-top: 5px;">
+                                        <a href="/booking/<%= car._id %>">book</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
+                <% }); %>
+            <% } else { %>
+                <p style="text-align: center; color: white; width: 100%; font-size: 20px; margin-top: 50px;">No available cars found.</p>
+            <% } %>
+            </ul>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

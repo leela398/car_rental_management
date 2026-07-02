@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN LOGIN</title>
+    <link rel="stylesheet" href="/css/adlog.css">    
+    <script type="text/javascript">
+        function preventBack() {
+            window.history.forward(); 
+        }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
+</head>
+<body>
+
+<% if (error) { %>
+    <script>alert("<%= error %>")</script>
+<% } %>
+
+<button class="back"><a href="/">Go To Home</a></button>
+    <div class="helloadmin">
+    <h1>HELLO ADMIN!</h1></div>
+
+    <form class="form" method="POST" action="/adminlogin">
+        <h2>Admin Login</h2>
+        <input class="h" type="text" name="adid" placeholder="Enter admin user id" required>
+        <input class="h" type="password" name="adpass" placeholder="Enter admin password" required>
+        <input type="submit" class="btnn" value="LOGIN" name="adlog" >
+    </form>
+</body>
+</html>

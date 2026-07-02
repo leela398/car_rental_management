@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CANCEL BOOKING</title>
+</head>
+<body>
+<style>
+    .form{
+        text-align: center;
+        margin-top: 150px;
+        font-family: Arial, sans-serif;
+    }
+    .hai{
+        width: 200px;
+        height: 40px;
+        background: #ff7200;
+        border:none;
+        font-size: 18px;
+        border-radius: 5px;
+        cursor: pointer;
+        color:#fff;
+        margin: 20px;
+    }
+    .no{
+        width: 200px;
+        height: 40px;
+        background: #ff7200;
+        border:none;
+        font-size: 18px;
+        border-radius: 5px;
+        cursor: pointer;
+        color:#fff;
+        margin: 20px;
+    }
+    .no a{
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+    }
+</style>
+    <form class="form" method="POST" action="/cancelbooking">
+        <h1>ARE YOU SURE YOU WANT TO CANCEL YOUR BOOKING?</h1>
+        <input type="submit" class="hai" value="CANCEL NOW" name="cancelnow">
+        <button type="button" class="no"><a href="/payment">GO TO PAYMENT</a></button>
+    </form>
+</body>
+</html>

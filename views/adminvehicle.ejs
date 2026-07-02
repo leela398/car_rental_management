@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMINISTRATOR - APEX DRIVE</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="admin-page">    
+<div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">APEX</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="/adminvehicle">VEHICLE MANAGEMENT</a></li>
+                    <li><a href="/adminusers">USERS</a></li>
+                    <li><a href="/admindash">FEEDBACKS</a></li>
+                    <li><a href="/adminbook">BOOKING REQUEST</a></li>
+                    <li><button class="nn"><a href="/logout">LOGOUT</a></button></li>
+                </ul>
+            </div>
+         </div>
+        <div>
+            <h1 class="header">CARS</h1>
+            <div style="display: flex; justify-content: center; margin-bottom: 25px;">
+                <button class="add"><a href="/addcar">+ ADD CARS</a></button>
+            </div>
+            <div>
+                <div>
+                    <table class="content-table">
+                <thead>
+                    <tr>
+                        <th>CAR ID</th>
+                        <th>CAR NAME</th>
+                        <th>FUEL TYPE</th>
+                        <th>CAPACITY</th>
+                        <th>PRICE</th>
+                        <th>AVAILABLE</th>
+                        <th>DELETE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <% if (cars && cars.length > 0) { %>
+                    <% cars.forEach(function(car) { %>
+                        <tr class="active-row">
+                            <td><%= car._id %></td>
+                            <td><%= car.car_name %></td>
+                            <td><%= car.fuel_type %></td>
+                            <td><%= car.capacity %></td>
+                            <td><%= car.price %></td>
+                            <td><%= car.available === 'Y' ? 'YES' : 'NO' %></td>
+                            <td>
+                                <button type="button" class="but">
+                                    <a href="/deletecar/<%= car._id %>" onclick="return confirm('Are you sure you want to delete this car?')">DELETE CAR</a>
+                                </button>
+                            </td>
+                        </tr>
+                    <% }); %>
+                <% } else { %>
+                    <tr>
+                        <td colspan="7" style="text-align: center;">No cars registered yet.</td>
+                    </tr>
+                <% } %>
+                </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Booking - APEX DRIVE</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript">
+        function preventBack() {
+            window.history.forward(); 
+        }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
+</head>
+<body class="booking-page">
+
+<% if (error) { %>
+    <script>alert("<%= error %>")</script>
+<% } %>
+
+    <div class="hai">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">APEX</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="/cardetails">HOME</a></li>
+                    <li><a href="/about">ABOUT</a></li>
+                    <li><a href="#">DESIGN</a></li>
+                    <li><a href="/contact">CONTACT</a></li>
+                    <li><button class="nn"><a href="/logout">LOGOUT</a></button></li>
+                    <li><img src="/images/profile.png" class="circle" alt="Alps"></li>
+                    <li><p class="phello">HELLO! &nbsp;<a id="pname"><%= user.fname %> <%= user.lname %></a></p></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+            
+    <div class="main"> 
+        <div class="register">
+            <h2>BOOKING</h2>
+            <form id="register" method="POST" action="/booking/<%= car._id %>">
+                <h2>CAR NAME : <%= car.car_name %></h2>
+                
+                <label>BOOKING PLACE : </label>
+                <br>
+                <input type="text" name="place" id="name" placeholder="Enter Your Destination" required>
+                <br><br>
+
+                <label>BOOKING DATE : </label>
+                <br>
+                <input type="date" name="date" id="datefield" required>
+                <br><br>
+
+                <label>DURATION : </label>
+                <br>
+                <input type="number" name="dur" min="1" max="30" id="name" placeholder="Enter Rent Period (in days)" required>
+                <br><br>
+
+                <label>PHONE NUMBER : </label>
+                <br>
+                <input type="tel" name="ph" maxlength="10" id="name" placeholder="Enter Your Phone Number" required>
+                <br><br>
+                
+                <label>DESTINATION : </label>
+                <br>
+                <input type="text" name="des" id="name" placeholder="Enter Your Destination" required>
+                <br><br>
+
+                <label>Return date : </label>
+                <br>
+                <input type="date" name="rdate" id="dfield" required>
+                <br><br>
+                
+                <input type="submit" class="btnn" value="BOOK" name="book">
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; //January is 0!
+        var yyyy = today.getFullYear();
+        if (dd < 10) {
+             dd = '0' + dd
+        }
+        if (mm < 10) {
+               mm = '0' + mm
+        }
+        today = yyyy + '-' + mm + '-' + dd;
+        
+        document.getElementById("datefield").setAttribute("min", today);
+        document.getElementById("datefield").setAttribute("max", today);
+        document.getElementById("dfield").setAttribute("min", today);
+    </script>
+</body>
+</html>

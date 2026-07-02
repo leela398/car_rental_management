@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>APEX DRIVE | About Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .about-section {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 40px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+        .about-section h1 {
+            font-size: 36px;
+            color: #0f172a;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+        .about-section p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #334155;
+            margin-bottom: 20px;
+        }
+        .about-section h3 {
+            font-size: 20px;
+            color: #0f172a;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .grid-item {
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        .grid-item h4 {
+            font-size: 16px;
+            color: #0f172a;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .grid-item p {
+            font-size: 14px;
+            margin-bottom: 0;
+            color: #475569;
+        }
+    </style>
+</head>
+<body class="body" style="background: #f8fafc;">
+    <div class="main" style="background: #f8fafc; min-height: auto;">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">APEX</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <% if (user) { %>
+                        <li><a href="/cardetails">HOME</a></li>
+                        <li><a href="/about">ABOUT</a></li>
+                        <li><a href="/contact">CONTACT</a></li>
+                        <li><a href="/feedback">FEEDBACK</a></li>
+                        <li><button class="nn"><a href="/logout">LOGOUT</a></button></li>
+                    <% } else { %>
+                        <li><a href="/">HOME</a></li>
+                        <li><a href="/about">ABOUT</a></li>
+                        <li><a href="/contact">CONTACT</a></li>
+                        <li><button class="adminbtn"><a href="/adminlogin">ADMIN LOGIN</a></button></li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <h1>About Apex Drive</h1>
+            <p>Welcome to Apex Drive. Established in 2021, we set out with a simple mission: to provide people with an easy, transparent, and premium vehicle rental experience without the typical hassles of traditional car hire agencies.</p>
+            <p>We pride ourselves on offering a fully digital booking experience, a diverse fleet of brand-new vehicles, and 24/7 customer service. Whether you need an electric vehicle for urban commuting, a sports car for a special weekend, or a spacious family SUV, we have you covered.</p>
+            
+            <div class="about-grid">
+                <div class="grid-item">
+                    <h4>Meticulous Quality</h4>
+                    <p>Every single car in our fleet undergoes standard safety inspections and professional sanitization before it reaches you.</p>
+                </div>
+                <div class="grid-item">
+                    <h4>Transparent Pricing</h4>
+                    <p>No hidden fees, no surprise drop-off charges, and no high-pressure sales pitches. What you see is exactly what you pay.</p>
+                </div>
+                <div class="grid-item">
+                    <h4>24/7 Road Assistance</h4>
+                    <p>All rentals include comprehensive coverage and 24-hour emergency roadside assistance, keeping you and your family safe.</p>
+                </div>
+                <div class="grid-item">
+                    <h4>Flexible Bookings</h4>
+                    <p>Change or cancel your reservations easily online, and choose from daily, weekly, or custom monthly rental options.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
