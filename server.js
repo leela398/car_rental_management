@@ -19,6 +19,8 @@ const PORT = process.env.PORT || 3000;
 
 // Connect to MongoDB
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/carproject';
+console.log('Connecting to database...');
+console.log('URI Type:', MONGODB_URI.includes('127.0.0.1') ? 'Local Development (Fallback)' : 'Production (Atlas)');
 mongoose.connect(MONGODB_URI)
   .then(async () => {
     console.log('Connected to MongoDB successfully!');
