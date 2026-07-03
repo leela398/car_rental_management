@@ -136,7 +136,7 @@ app.post('/login', async (req, res) => {
     }
   } catch (err) {
     console.error(err);
-    res.render('index', { error: 'An error occurred during login' });
+    res.render('index', { error: 'Login error: ' + err.message });
   }
 });
 
@@ -176,7 +176,7 @@ app.post('/register', async (req, res) => {
     res.send('<script>alert("Registration Successful! Click OK to login."); window.location.href = "/";</script>');
   } catch (err) {
     console.error(err);
-    res.render('register', { error: 'Please check connection or inputs' });
+    res.render('register', { error: 'Registration error: ' + err.message });
   }
 });
 
