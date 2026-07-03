@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const session = require('express-session');
+const { MongoStore } = require('connect-mongo');
 const path = require('path');
 const multer = require('multer');
 const bcrypt = require('bcryptjs');
@@ -56,7 +57,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret: process.env.SESSION_SECRET || 'carrental-default-secret-key-9999',
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: false,
+  store: MongoStore.create({
+    mongoUrl: MONGODB_URI,
+    collectionName: 'sessions',
+    ttl: 14 * 24 * 60 * 60 // Sessions expire in 14 days
+  })
 }));
 
 // Multer Storage Configuration for Car Image Uploads
